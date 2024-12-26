@@ -1,0 +1,75 @@
+#scrollToTopBtn {
+    display: none;
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    z-index: 99;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 99px;
+    transition: 0.5s;
+}
+#scrollToTopBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--gray_-2);
+    opacity: 0.4;
+    z-index: -1; 
+    border-radius: 99px; 
+}
+#scrollToTopBtn .arrow {
+    width: 20px;
+    height: 19px;
+    transition: transform 0.3s ease;
+}
+
+@keyframes flyAnimation {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    25% {
+        transform: scale(1.2, 0.8) translateY(5px);
+    }
+    75% {
+        transform: scale(1) translateY(-5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+#scrollToTopBtn.animate .arrow {
+    animation: flyAnimation 0.60s forwards;
+}
+#scrollToTopBtn:hover {
+    transition: 0.5s;
+    opacity: 0.8;
+}
+
+.wrap__soDR9 .button__VPX41 {
+    height: 64px;
+    width: 64px;
+}
+@media screen and (max-width: 768px) {
+    .page-template-template-home .wrap__soDR9 {
+        z-index: 9990;
+    }
+    .page-template-template-home #scrollToTopBtn {
+        right: 20px;
+        bottom: 171px;
+    }
+     #scrollToTopBtn {
+        right: 20px;
+    }
+    .page-template-template-home .wrap__soDR9 .button__VPX41 {
+        margin-bottom: 87px !important;
+    }
+}

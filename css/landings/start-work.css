@@ -1,0 +1,70 @@
+/* connecting styles for start-work blocks on landings */
+
+/* common styles for start-work blocks */
+.wpcf7 form.sent .wpcf7-response-output::before {
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIKSURBVHgBnZXPSxtBFMffm0hJldJtT6a9pNBeIoJeCi2VpMf2kKZg0/RSjM0lJ1t6L6knb8aTCOrqTRcP4kXwYgL+AR4UPAiuiPgLdP1Bfqy6z5nRyK6u7prvZd7M7Hx4896btwgeSqiKEgRFEXYFDGM6bRj3fY93QqzG38QwCkQx+x4BLPJjeVY9L05kt3VPYHI4lEDGVH5UgfulE2BO694cty8G7JPUyIscMBzkZhC8pXBvEq3xJ7g0c1y45WFq5GUXIalQh8g6+6pldqevgSm1OUzE5rkZhjrE42qYWHolEsbkihWIPQQWaX7nmHOvlEfQ2CNsCSSEHvCp6Jsk/Ps0BT/f/ndCr6oBu9SwUibzwC8s+6EfSuYR9M52gr6/7NivYukZq0DFtTzCz1seBBNi54+fMjdYZ/tf6PsyB9HX33zDamoIQtAog+lY3DvekGO2Iw+R0HsOTvqCWYHyoSyb76MhXjIYs28KSLajX9p+YDy1i5PdW+0N0kQsIIEDWFzV5Pg5koHBhT8eMFGLlBej9PAy06drPt7vXTgdq/RRNAuZlLG0bpBlpaFOce9ytc5z3RyWZ05WWuJNgOiMpSeMrJz2a3ugNnd0Gw4ttsab1nkg2ng0vK7Pb3X2Q8vsDNkXXRusaBZgQYyQiSfZdsOnAhEVTFYZcOverkC7RPcWL0DYos68fgEXt3neJ0AcBYIAAAAASUVORK5CYII=');
+}
+.wpcf7 form.sent .wpcf7-response-output {
+    color: var(--success_0);
+}
+.wpcf7 form.spam .wpcf7-response-output::before,
+.wpcf7 form.unaccepted .wpcf7-response-output::before,
+.wpcf7 form.invalid .wpcf7-response-output::before {
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFNSURBVHgB3VSxSsRAEJ2JwQMRTKXYaORQtLsDvfrsLQRbIfELvN7iCHKKlVb+gbU/oPgJ2p4KsdBOMMLZnBvH3Q2ee0l2E6/zHgzZ7My+vJkXFmAsELZdR0SZWquooHtY3WYV+02EWBfVoykZHq+6McU3BOTKDYKo12dL9eApglEUxl+frQFZ8nlnumK3YRSFQh0jFubliLC+cvBwB39RyMkuf9bOhg/OuqeooFPduVzC+86yzx+1X0IPZho+KIzNx6OqV4pQtGohGOckwNs+u835lTKEGSN00BhkpdUR4n66qNe9gg8eOWjx8dTUDVt9UY1Q8XrdAb1QadBmRmHaCBWzWycwv3OuYxwySBIWGTG10IDJuTVdesgg2bI0AtHVHXi+2AUjEoPE7IOkZcRFUz17f5FhBEFzoHCCMGBILgGWuqKyZBTFfbYH/wLf37J61d315LAAAAAASUVORK5CYII=');
+}
+.wpcf7 form.spam .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.invalid .wpcf7-response-output {
+    color: var(--warning_0);
+}
+.wpcf7-not-valid-tip::before,
+.wpcf7 form.aborted .wpcf7-response-output::before,
+.wpcf7 form.failed .wpcf7-response-output::before {
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHBSURBVHgBrZTPSwJBFMffjEvpJfcSRodYSzBCQS9dW8rAY/0Bgf0Fduiu0j+gf4EJ3fNYoaiHzkolQllKh8DbKkJGuzvNrBmb7g/NvrA/3vz4zJuZ9x4CG7XEEA8w4IeWU/KWa5LVeGQGUTn5hHbuEABR30ftmgPjNGBc8V7V2rbA5l7wACPIEiA8WHmCUJs+Se/NXU7fjvXGcySQRIhc2sE0TwkRVFU9f6JzDD1s7gdjiJAs/EEyQYf+4n3+B9iKhgSiKCW2qtGEtYtr5hK8HkXNmFJP5rxhemHalhVFEc1gU4pf4uQ4+9GAmJA4zKlRNGAWItQIwZyiZydWKQuDE2xvdFp58Icbwz+LgwFI9G2p/m0RplFHXexqYfMSCZTGU2xW0WSo+Qr1sLZlSi1bDV4+PYOVVAZsiGn2GZ6hzGUo1LSKuELbsLDut4CR9qeiVL6dG4oVBZbHRuM5z+pw3c6bCY/EfMV67heQqRUJJFSAJMym5EbhITUyJsrX4+5WzIFQgtYnAawlyUQ59hcbeX2jYYFtiJsCLaIixjiOxrKIRkOZXWJP7mfC5fbEuRsC9aqKAu/BLjf776jvXSOIXl89kZ+uyrCIGwAAAABJRU5ErkJggg==');
+}
+.wpcf7-not-valid-tip,
+.wpcf7 form.aborted .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+    color: var(--danger_0);
+}
+.wpcf7-not-valid-tip::before,
+.wpcf7-response-output::before {
+    display: block;
+    margin: 0 10px 0 0;
+    width: 20px;
+    height: 20px;
+}
+.wpcf7-not-valid-tip {
+    display: flex;
+    margin: 4px 0 0;
+}
+.wpcf7-response-output {
+    display: flex;
+    margin: 20px 0 0 !important;
+    padding: 0 !important;
+    font-family: 'Inter';
+    font-size: 15px;
+    line-height: 160%;
+    font-weight: 500;
+    border: none !important;
+}
+.wpcf7-list-item {
+    width: 22px;
+    height: 22px;
+    margin: 0 8px 0 0;
+}
+.wpcf7-list-item input {
+    position: relative;
+    bottom: -4px;
+    margin: 0;
+    width: 22px;
+    height: 22px;
+} 
+.wpcf7-not-valid-tip {
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+}

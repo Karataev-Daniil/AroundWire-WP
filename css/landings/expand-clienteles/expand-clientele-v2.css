@@ -1,0 +1,103 @@
+/* expand-clientele V2 */
+.expand-clientele__wrapper.v2 {
+    width: calc(100% - 24px);
+    margin: 12px;
+    border-radius: 24px;
+
+    .expand-clientele {
+        padding: 140px 0;
+        display: grid;
+        grid-template-columns: calc(50% - 60px) calc(50% - 60px);
+        gap: 120px;
+        border-radius: 24px;
+
+        .statistics-cards {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                border-radius: 24px;
+            }
+        }
+
+        .text-statistics {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            div {
+                margin: 0 0 4px;
+                text-align: left;
+            }
+
+            h2 {
+                margin: 0 0 16px;
+                text-align: left;
+            }
+
+            p {
+                margin: 0 0 32px;
+                text-align: left;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    /* expand-clientele V2 */
+    .expand-clientele__wrapper.v2 {
+        
+        .expand-clientele {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 32px;
+            
+            .statistics-cards {
+                width: fit-content;
+            }
+            .text-statistics {
+                p {
+                    margin: 0;
+                }
+            }    
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* expand-clientele V2 */
+    .expand-clientele__wrapper.v2 {
+
+        .expand-clientele {
+            padding: 64px 0;
+            gap: 32px; 
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    /* expand-clientele V2 */
+    .expand-clientele__wrapper.v2 {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+
+        .expand-clientele {
+            
+            .statistics-cards {
+                width: 100%;
+            }  
+        }
+    }
+}
+@media screen and (max-width: 440px) {
+    /* expand-clientele V2 */
+    .expand-clientele__wrapper.v2 {
+
+        .expand-clientele {
+            padding: 32px 0;
+        }
+    }
+}

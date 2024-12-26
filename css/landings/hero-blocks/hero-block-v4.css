@@ -1,0 +1,145 @@
+/* hero-block V4 */
+.hero-block__wrapper.v4 { 
+    position: relative;
+
+    .hero-block {
+        padding: 140px 0 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+
+        .hero-block__info {
+            padding: 0 0 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            div {
+                margin: 0 0 4px;
+            }
+
+            h1 {
+                margin: 0 0 24px;
+            }
+
+            p {
+                margin: 0 0 32px;
+            }
+
+            .link-button {
+                max-width: fit-content;
+                display: block;
+                text-decoration: none;
+                color: var(--red_5);
+            }
+        }
+
+        .hero-block__preview {
+
+            .pic-desktop {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .pic-tablet {
+                display: none;
+            }
+
+            .pic-mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1340px) {
+    /* hero-block V4 */
+    .hero-block__wrapper.v4 {
+
+        .hero-block {
+            padding: 24px 0 32px;
+            display: flex;
+            flex-direction: column-reverse;
+
+            .hero-block__info {
+                padding: 0;
+
+                .link-button {
+                    text-align: center;
+                    max-width: 100%;
+                    max-height: fit-content;
+                }
+            }
+
+            .hero-block__preview {
+                margin: 0 0 32px;
+                display: flex;
+                justify-content: center;
+
+                .pic-desktop {
+                    display: none;
+                }
+
+                .pic-tablet {
+                    width: auto;
+                    display: block;
+                }
+
+                .benefits {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* hero-block V4 */
+    .hero-block__wrapper.v4 {
+
+        .hero-block {
+
+            .hero-block__preview {
+
+                .pic-tablet {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 440px) {
+    /* hero-block V4 */
+    .hero-block__wrapper.v4 {
+
+        .hero-block {
+
+            .hero-block__preview {
+
+                .pic-desktop {
+                    display: none;
+                }
+
+                .pic-tablet {
+                    display: none;
+                }
+
+                .pic-mobile {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .hero-block__info {
+                border-radius: 0 0 32px 32px;
+            }
+        }
+    }
+}

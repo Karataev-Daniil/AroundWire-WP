@@ -1,0 +1,6 @@
+/* connecting styles for benefits blocks on landings */
+
+/* common styles for benefits blocks */
+.page-template-landing .slick-prev {
+    display: none !important;
+}

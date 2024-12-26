@@ -1,0 +1,99 @@
+/* Styles for start-work - Version v7 */
+.start-work__wrapper.v7 .start-work {
+    position: relative;
+    display: grid;
+    grid-template-columns: 550px auto;
+    padding: 120px 0;
+}
+
+.start-work__wrapper.v7 .start-work__block-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+}
+.start-work__wrapper.v7 .start-work__block {
+    width: calc(100% + 168px);
+    margin: 0 0 0 -168px;
+    padding: 120px 64px 120px 234px;
+    box-sizing: border-box;
+    display: flex;
+    background-color: var(--start-work-block-color);
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    border-radius: 32px;
+}
+.start-work__wrapper.v7 .start-work__element {
+    position: relative;
+    display: grid;
+    grid-template-columns: 72px auto;
+    gap: 24px;
+}
+.start-work__wrapper.v7 .start-work__element:nth-of-type(1)::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    bottom: -17px;
+    left: 0;
+    right: 0;
+    background-color: var(--gray_3);
+    opacity: 24%;
+}
+.start-work__wrapper.v7 .start-work__element:nth-of-type(2)::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    bottom: -17px;
+    left: 0;
+    right: 0;
+    background-color: var(--gray_3);
+    opacity: 24%;
+}
+.start-work__wrapper.v7 .start-work__element .text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.start-work__wrapper.v7 .start-work__element svg {
+    width: 72px;
+    height: 72px;
+}
+.start-work__wrapper.v7 form {
+    background-color: #F6F6F7E0;
+    backdrop-filter: blur(40px);
+}
+
+
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    .start-work__wrapper.v7 .start-work {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0;
+    }
+    .start-work__wrapper.v7 .start-work__block {
+        width: calc(100% + 72px);
+        margin: 0 -36px 0;
+        padding: 36px 40px 208px;
+        border-radius: 32px;
+    }
+    .start-work__wrapper.v7 .start-work__block-form {
+        margin: -168px 0 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .start-work__wrapper.v7 .start-work {
+        padding: 40px 0;
+    }
+    
+}
+
+@media screen and (max-width: 440px) {
+    .start-work__wrapper.v7 .start-work {
+        padding: 32px 0;
+    }
+}

@@ -1,0 +1,90 @@
+/* Styles for expand-clientele - Version v6 */
+.expand-clientele__wrapper.v6 .expand-clientele {
+    padding: 0 0 120px;
+    display: grid;
+    grid-template-columns: 60% auto;
+}
+.expand-clientele__wrapper.v6 .statistics-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.expand-clientele__wrapper.v6 .statistics-cards img {
+    width: calc(100% + 72px);
+    margin: 0 0 0 -72px;
+    border-radius: 24px;
+}
+.expand-clientele__wrapper.v6 .text-statistics {
+    padding: 14% 19.6% 14% 6.4%;
+
+    background-color: #F6F6F7E0;
+    backdrop-filter: blur(40px);
+    border-radius: 32px;
+    z-index: -1;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+.expand-clientele__wrapper.v6 .text-statistics div {
+    margin: 0 0 4px;
+    text-align: left;
+}
+.expand-clientele__wrapper.v6 .text-statistics h2 {
+    margin: 0 0 16px;
+}
+
+@media screen and (max-width: 1200px) {
+    .expand-clientele__wrapper.v6 .expand-clientele {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .expand-clientele__wrapper.v6 .text-statistics {
+        padding: 40px 24px 104px;
+    }
+    .expand-clientele__wrapper.v6 .statistics-cards {
+        flex-direction: row;
+        padding: 0 36px;
+        width: auto;
+    }
+    .expand-clientele__wrapper.v6 .statistics-cards img {
+        width: 100%;
+        max-width: 648px;
+        margin: -72px 0 0;
+        border-radius: 24px;
+    }
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 768px) {
+    .expand-clientele__wrapper.v6 .expand-clientele {
+        padding: 0 0 40px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .expand-clientele__wrapper.v6 .expand-clientele {
+        width: calc(100% + 72px);
+        margin: 0 -36px;
+    }
+    .expand-clientele__wrapper.v6 .text-statistics {
+        border-radius: 0;
+    }
+}
+@media screen and (max-width: 440px) {
+    .expand-clientele__wrapper.v6 .text-statistics {
+        padding: 32px 8px 104px;
+    }
+    .expand-clientele__wrapper.v6 .expand-clientele {
+        width: calc(100% + 16px);
+        margin: 0 -8px;
+        padding: 0 0 32px;
+    }
+    .expand-clientele__wrapper.v6 .statistics-cards {
+        padding: 0 8px;
+    }
+}

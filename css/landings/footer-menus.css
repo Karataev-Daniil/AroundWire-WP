@@ -1,0 +1,43 @@
+/* connecting styles for footer-menus blocks on landings */
+
+/* common styles for footer-menus blocks */
+
+/* footer-menus V1 */
+.footer-menu__wrapper.v1 {
+    width: calc(100% - 24px);
+    margin: 12px;
+    border-radius: 24px;
+}
+
+/* footer-menus V2 */
+.footer-menu__wrapper.v2 {
+    border-radius: 56px 56px 0 0;
+}
+
+/* footer-menus V3 */
+.footer-menu__wrapper.v3 {
+    border-radius: 56px 56px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+    /* footer-menus tablet V1 */
+    .footer-menu__wrapper.v1 {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    /* footer-menus V2 */
+    .footer-menu__wrapper.v2 {
+        width: 100%;
+        border-radius: 32px 32px 0 0;
+    }
+
+    /* footer-menus V3 */
+    .footer-menu__wrapper.v3 {
+        width: 100%;
+        border-radius: 32px 32px 0 0;
+    }
+}

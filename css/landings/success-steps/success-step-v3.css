@@ -1,0 +1,122 @@
+/* success-steps V3 */
+.success-steps__wrapper.v3 {
+    width: calc(100% - 24px);
+    margin: 12px;
+    border-radius: 24px;
+
+    .success-steps {
+        padding: 140px 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 5%;
+        
+        .success-steps__info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+    
+            div {
+                margin: 0 0 4px;
+                text-align: left;
+            }
+    
+            h2 {
+                margin: 0 0 16px;
+                text-align: left;
+            }
+    
+            p {
+                margin: 0 0 32px;
+                text-align: left;
+            }
+        }
+
+        .success-steps__block {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+
+            .card-info {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                width: 205px;
+                padding: 24px 16px;
+                border-radius: 24px;
+
+                div {
+                    padding: 12px 24px 28px;
+                    background-size: contain;
+                    background-position: 0% 50%;
+                    background-repeat: no-repeat;
+                    color: rgb(228, 242, 233);
+                }
+
+                h3 {
+                    height: 56px;
+                    text-align: left;
+                }
+
+                p {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    /* success-steps V3 */
+    .success-steps__wrapper.v3 {
+
+        .success-steps {
+            flex-direction: column;
+
+            .success-steps__block {
+                align-items: stretch;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* success-steps V3 */
+    .success-steps__wrapper.v3 {
+
+        .success-steps {
+            padding: 64px 0;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    /* success-steps V3 */
+    .success-steps__wrapper.v3 {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+
+        .success-steps {
+
+            .success-steps__block {
+                flex-direction: column;
+                gap: 18px;
+
+                .card-info {
+                    width: auto;
+                    height: auto;
+
+                    h3 {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 440px) {
+    /* success-steps V3 */
+    .success-steps__wrapper.v3 {
+
+        .success-steps {
+            padding: 32px 0;
+        }
+    }
+}

@@ -1,0 +1,184 @@
+
+/* start-work V2 */
+.start-work__wrapper.v2 {
+    width: calc(100% - 24px);
+    margin: 12px;
+    border-radius: 24px;
+
+    .start-work {
+        padding: 140px 0;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 120px;
+
+        .start-work__block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            > h2 {
+                margin: 0 0 32px;
+            }
+
+            .start-work__element:nth-of-type(1) {
+                z-index: 1;
+            }
+            .start-work__element:nth-of-type(2) {
+                position: relative;
+                margin-top: -30px;
+                z-index: 2;
+            }
+            .start-work__element:nth-of-type(3) {
+                position: relative;
+                margin-top: -40px;
+                z-index: 3;
+            }
+
+            .start-work__element {
+                padding: 24px 32px 44px;
+                border-radius: 24px;
+                display: grid;
+                grid-template-columns: 48px auto;
+                gap: 24px;
+
+                svg {
+                    width: 48px;
+                    height: 48px;
+                }
+                .start-work__content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+            }
+
+            .start-work__block-form {
+                background-color: var(--gray_6);
+                border-radius: 24px;
+
+                .body-medium-medium {
+                    padding: 0 0 24px;
+
+                    p {
+                        color: var(--grey_0);
+                    }
+
+                    a {
+                        color: var(--grey_0);
+                    }
+                }
+
+                .title-largest {
+                    padding: 20px 32px 32px;
+                    margin: -24px 0 0 -32px;
+                    background-image: url("/wp-content/uploads/2024/05/Btns.svg");
+                    background-size: contain;
+                    background-position: 0% 50%;
+                    background-repeat: no-repeat;
+                    color: var(--gray_-3);
+                }
+
+                
+
+                .label-medium {
+                    padding: 0 0 4px;
+                    color: var(--gray_-3);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) { 
+    /* start-work V2 */
+    .start-work__wrapper.v2 {
+
+        .start-work {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 32px;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+
+    /* start-work V2 */
+    .start-work__wrapper.v2 {
+
+        .start-work {
+            padding: 64px 0;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    /* start-work V2 */
+    .start-work__wrapper.v2 {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+
+        .start-work {
+
+            .start-work__block {
+                h2 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 650px) { 
+    /* start-work V2 */
+    .start-work__wrapper.v2 {
+
+        .start-work {
+
+            .start-work__block {
+
+                .start-work__block-form {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 440px) {
+    /* start-work V2 */
+    .start-work__wrapper.v2 {
+
+        .start-work {
+            gap: 24px;
+            padding: 32px 0;
+
+            .start-work__block {
+
+                .start-work__element {
+                    flex-direction: column;
+                    
+                    div {
+                        display: flex;
+                        text-align: left;
+                        align-items: center;
+                        flex-direction: column;
+
+                        img {
+                            width: fit-content;
+                        }
+
+                        h3 {
+                            margin: 0;
+                            padding: 0 0 8px;
+                            width: 100%;
+                            text-align: left;
+                        }
+                    }
+                }
+
+                h2 {
+                    text-align: center;
+                    margin: 0 0 16px;
+                }
+            }
+        }
+    }
+}

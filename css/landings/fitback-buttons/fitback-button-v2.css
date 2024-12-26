@@ -1,0 +1,69 @@
+/* Styles for fitback-button - Version v2 */
+.fitback-button__wrapper.v2 {
+    background-color: var(--fitback-block-color);
+    
+    .container {
+        overflow: visible;
+    }
+
+    .fitback {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        border-radius: 56px;
+        padding: 64px 0;
+        margin: 0 0 64px;
+        background-color: var(--fitback-block-color-2);
+
+        h2 {
+            color: #090909;
+            text-align: center;
+        }
+
+        a {
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            max-width: 456px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--red_5);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    /* fitback-button V2 */
+    .fitback-button__wrapper.v2 {
+
+        .fitback {
+            gap: 24px;
+            padding: 40px 24px;
+            margin: 0 0 40px;
+        }
+    }
+}
+@media screen and (max-width: 440px) {
+    /* fitback-button V2 */
+    .fitback-button__wrapper.v2 {
+
+        .fitback::after {
+            content: '';
+            position: absolute;
+            height: 50px;
+            width: 100%;
+            bottom: -50px;
+            background-color: var(--fitback-block-color-2);
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+        .fitback {
+            position: relative;
+            gap: 16px;
+            padding: 24px 8px;
+            margin: 0 -8px;
+            border-radius: 32px 32px 0 0;   
+        }
+    }
+}

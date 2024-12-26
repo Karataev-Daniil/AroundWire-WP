@@ -1,0 +1,20 @@
+<?php
+return array (
+  '/hvac-leads-in-las-vegas' => 'https://pro.aroundwire.com/hvac-leads-las-vegas/',
+  '/blog/the-roadmap-to-starting-an-hvac-business-2' => 'https://pro.aroundwire.com/blog/the-roadmap-to-starting-an-hvac-business',
+  '/blog/hvac-lead-generation-tips-for-las-vegas-2' => 'https://pro.aroundwire.com/blog/hvac-lead-generation-tips-for-las-vegas',
+  '/blog/align-your-locksmith-business-with-niche-specializations-for-success' => 'https://pro.aroundwire.com/blog/aligning-your-locksmith-business-with-niche-specializations/',
+  '/blog/land-more-gigs-with-ai-job-search-tips-for-service-providers' => 'https://pro.aroundwire.com/blog/land-more-gigs-with-the-power-of-the-ai/',
+  '/blog/solar-panel-installation-mistakes-and-how-to-avoid-them-2' => 'https://pro.aroundwire.com/blog/solar-panel-installation-mistakes-and-how-to-avoid-them/',
+  '/blog/proven-hvac-lead-generation-strategies-for-las-vegas/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/hvac-lead-generation-tips-for-las-vegas/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/hvac-lead-generation-in-las-vegas-2024/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/guide-to-hvac-lead-generation-in-vegas-2024/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/diy-hvac-lead-generation-tips-for-vegas/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/hvac-lead-generation-strategies-for-las-vegas/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/hvac-lead-generation-with-government-programs/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/unique-hvac-lead-generation-strategies-for-las-vegas-2024/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/hvac-lead-generation-tips-for-vegas-you-need-to-know/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/hvac-marketing-strategies-for-las-vegas/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+  '/blog/attract-hvac-customers-in-las-vegas/' => 'https://pro.aroundwire.com/blog/how-to-get-hvac-leads',
+);

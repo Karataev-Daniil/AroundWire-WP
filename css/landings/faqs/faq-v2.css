@@ -1,0 +1,106 @@
+/* faq V2 */
+.faqs__wrapper.v2 {
+    width: calc(100% - 24px);
+    margin: 12px;
+    border-radius: 24px;
+
+    .faqs__block {
+        display: flex;
+        padding: 140px 0;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .faqs-tagline {
+            text-align: left;
+            width: 100%;
+        }
+        
+        .faqs-title {
+            margin: 0 0 40px;
+            text-align: left;
+        }
+
+        
+        .faq-item {
+            background-color: var(--gray_6);
+            height: auto;
+            width: calc(100% - 40px);
+            padding: 16px 20px;
+            border-radius: 20px;
+            box-shadow: 0px 1px 1px 0px rgba(12, 13, 13, 0.08), 0px 1px 0px 0px rgba(12, 13, 13, 0.04);
+            margin: 0 0 8px;
+
+            .faq-title {
+                color: var(--grey_-6);
+                text-decoration: none;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                user-select: none;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .faq-content.show {
+                padding: 10px 0 0;
+            }
+
+
+            .faq-content {
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+
+                span {
+                    color: var(--grey_-6);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* faq V2 */
+    .faqs__wrapper.v2 {
+        
+        .faqs__block {
+            padding: 64px 0;
+            
+            .faqs-title {
+                text-align: left;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    /* faq V2 */
+    .faqs__wrapper.v2 {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+
+        .faqs__block {
+
+            .faqs-tagline {
+                width: 100%;
+                text-align: left;
+            }
+
+            .faqs-title {
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+}
+@media screen and (max-width: 440px) {
+    /* faq V2 */
+    .faqs__wrapper.v2 {
+
+        .faqs__block {
+            padding: 32px 0;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+/* benefits V4 */
+.benefits__wrapper.v4 .benefits {
+    padding: 140px 0;
+}
+.benefits__wrapper.v4 h2 {
+    margin: 0 0 24px;
+}
+.benefits__wrapper.v4 .benefits > p {
+    max-width: 850px;
+    margin: 0 0 40px;
+}
+.benefits__wrapper.v4 .slick-slide {
+    display: flex !important;
+    flex-direction: column;
+}
+.benefits__wrapper.v4 .slick-slide > div {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin: 0 0 24px;
+}
+.benefits__wrapper.v4 .benefits__slider-block > div {
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 24px 96px 24px 24px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.benefits__wrapper.v4 svg {
+    width: 144px;
+    height: 144px;
+    position: absolute;
+    bottom: -32px;
+    right: -32px;
+    border-radius: 0 0 24px;
+}
+.benefits__wrapper.v4 .benefits__slider-block p {
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (max-width: 1024px) {
+    /* benefits tablet V4 */
+    .benefits__wrapper.v4 .benefits {
+        padding: 64px 0;
+    }
+    .benefits__wrapper.v4 .benefits__slider {
+        display: flex;
+        gap: 0;
+        padding: 0;
+        margin: 0 -36px 0 0;
+    }
+    .benefits__wrapper.v4 .slick-list {
+        overflow: visible;
+    }
+    .benefits__wrapper.v4 .slick-track {
+        display: flex;
+        gap: 20px;
+    }
+    .benefits__wrapper.v4 .slick-slide > div {
+        display: flex;
+        gap: 0;
+        margin: 0;
+    }
+    .benefits__wrapper.v4 .benefits__slider-block {
+        width: 100%;
+    }
+    .benefits__wrapper.v4 .benefits__slider-block > div {
+        width: 272px !important;
+        padding: 24px 48px 48px 24px;
+    }
+    .benefits__wrapper.v4 .benefits__slider-block > div h3 {
+        margin: 0 0 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* benefits tablet V4 */
+    .benefits__wrapper.v4 {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+}
+@media screen and (max-width: 440px) {
+    /* benefits mobile V4 */
+    .benefits__wrapper.v4 .benefits {
+        padding: 32px 0;
+    }
+}

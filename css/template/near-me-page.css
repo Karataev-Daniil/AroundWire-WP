@@ -1,0 +1,109 @@
+/* General Layout Styles for Page */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+body.fixed {
+    overflow: hidden;
+}
+
+/* Hero Block */
+.hero-block {
+    padding: 96px 0 32px;
+}
+.hero-block h1 {
+    margin: 0 0 24px;
+}
+.hero-block .content {
+    margin: 0 0 16px;
+}
+.hero-block button {
+    width: 264px;
+    border: 1px transparent;
+}
+
+/* Divider between Sections */
+.divider {
+    width: 100%;
+    height: 1px; 
+    background-color: var(--gray_3); 
+}
+
+/* Related Pages List */
+.related-pages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 0 96px;
+}
+.related-pages-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    background-color: var(--gray_5);
+    border-radius: 24px;
+    padding: 16px 24px;
+}
+.related-pages-list .button-group {
+    display: flex;
+    gap: 16px;
+}
+
+/* FAQs Block */
+.faqs-block__wrapper {
+    background-color: var(--gray_5);
+}
+.faqs-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 96px 0;
+}
+.faqs-block .faqs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.faqs-block .faq {
+    width: 100%;
+}
+.faqs-block .faq .faq-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    user-select: none;
+    cursor: pointer;
+}
+.faqs-block .faq .faq-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin 0.3s ease-out;
+    max-height: 0;
+    margin: 0 0 20px;
+}
+.faqs-block .faq .faq-content.show {
+    margin: 8px 0 20px;
+    max-height: 1000px; 
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .hero-block {
+        padding: 32px 0 24px;
+    }
+    
+    .related-pages-list {
+        padding: 24px 0 32px;
+    }
+
+    .faqs-block {
+        padding: 32px 0;
+        gap: 24px;
+    }
+}

@@ -1,0 +1,70 @@
+.error404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    > jdiv {
+        position: absolute;
+    }
+}
+.error404-block {
+    display: grid;
+    grid-template-columns: calc(46% - 48px) calc(54% - 48px);
+    align-items: center;
+    gap: 96px;
+    padding: 80px 36px;
+    max-width: 1064px;
+    margin: 0 auto;
+}
+.error404-block img {
+    width: 100%;
+}
+.error404-block-info div {
+    color: var(--red_0);
+    margin: 0 0 24px;
+}
+.error404-block-info h2 {
+    color: var(--gray_-6);
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+}
+.error404-block-info p {
+    color: var(--gray_-6);
+    margin: 0 0 24px;
+}
+.error404-block-info a {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+}
+@media screen and (max-width: 768px){ 
+    .error404-block {
+        grid-template-columns: calc(46% - 20px) calc(54% - 20px);
+        gap: 40px;
+    }
+}
+@media screen and (max-width: 650px){ 
+    .error404-block-info {  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .error404-block {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .error404-block img {
+        width: 230px;
+    }
+}
+@media screen and (max-width: 440px){ 
+    .error404-block {
+        padding: 32px 8px;
+    }
+    .error404-block-info a {
+        width: calc(100% - 40px);
+
+    }
+}

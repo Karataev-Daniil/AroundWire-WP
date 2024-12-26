@@ -1,0 +1,120 @@
+/* faq V3 */
+.faqs__wrapper.v3 {
+
+    .faqs__block {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 40px;
+        padding: 140px 0;
+        align-items: flex-start;
+
+        .faqs__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            div {
+                text-align: left;
+            }
+
+            h2 {
+                text-align: left;
+            }
+        }
+
+        .faqs__items {
+            display: grid;
+            width: 100%;
+            gap: 20px;
+
+            .faq-item {
+                padding: 16px 0;
+                box-shadow: 0px 1px 1px 0px rgba(12, 13, 13, 0.08), 0px 1px 0px 0px rgba(12, 13, 13, 0.04);
+
+                .faq-title {
+                    display: flex;
+                    justify-content: space-between;
+                    text-align: left;
+                    cursor: pointer;
+                    user-select: none;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                .faq-content {
+                    overflow: hidden;
+                    max-height: 0;
+                    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+
+                    span {
+                        text-align: left;
+                    }
+                }
+
+                .faq-content.show {
+                    max-height: 1000px;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    /* faq V3 */
+    .faqs__wrapper.v3 {
+        
+        .faqs__block {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .faq-item {
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* faq V3 */
+    .faqs__wrapper.v3 {
+        
+        .faqs__block {
+            padding: 64px 0;
+            
+            .faqs-title {
+                text-align: left;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    /* faq V3 */
+    .faqs__wrapper.v3 {
+
+        .faqs__block {
+
+            .faqs-tagline {
+                width: 100%;
+                text-align: left;
+            }
+
+            .faqs-title {
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+}
+@media screen and (max-width: 440px) {
+    /* faq V3 */
+    .faqs__wrapper.v3 {
+
+        .faqs-block {
+            padding: 32px 0;
+            gap: 24px;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+/* hero-block V2 */
+.hero-block__wrapper.v2 {
+    overflow: hidden;
+    border-radius: 0 0 24px 24px;
+    width: calc(100% - 24px);
+    margin: -1px 12px 12px;
+    position: relative;
+}
+
+.hero-block__wrapper.v2 .container {
+    overflow: visible;
+}
+
+.hero-block__wrapper.v2 .hero-block {
+    padding: 140px 0;
+    display: grid;
+    grid-template-columns: calc(50% - 60px) calc(50% - 60px);
+    justify-content: center;
+    gap: 120px;
+}
+
+.hero-block__wrapper.v2 .hero-block .hero-block__preview {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.hero-block__wrapper.v2 .hero-block .hero-block__preview img {
+    max-width: 360px;
+    height: auto;
+}
+
+.hero-block__wrapper.v2 .hero-block .hero-block__info div {
+    margin: 0 0 4px;
+}
+
+.hero-block__wrapper.v2 .hero-block .hero-block__info h1 {
+    margin: 0 0 24px;
+}
+
+.hero-block__wrapper.v2 .hero-block .hero-block__info p {
+    margin: 0 0 32px;
+}
+
+.hero-block__wrapper.v2 .hero-block .hero-block__info a {
+    max-width: fit-content;
+    display: block;
+    text-decoration: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1340px) {
+    /* hero-block V2 */
+    .hero-block__wrapper.v2 .container {
+        overflow: hidden;
+    }
+
+    .hero-block__wrapper.v2 .hero-block {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 24px;
+    }
+
+    .hero-block__wrapper.v2 .hero-block .hero-block__preview {
+        max-width: 100%;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+    }
+
+    .hero-block__wrapper.v2 .hero-block .hero-block__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /* hero-block V2 */
+    .hero-block__wrapper.v2 .hero-block {
+        padding: 64px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* hero-block V2 */
+    .hero-block__wrapper.v2 {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    /* hero-block V2 */
+    .hero-block__wrapper.v2 .hero-block {
+        padding: 32px 0;
+    }
+}
