@@ -1,42 +1,42 @@
 <?php
-/*
-Template Name: Sitemap Near Me
-*/
-get_header(); 
+/**
+ * Template Name: Sitemap Near Me
+ *
+ * List of every "… Near Me" page.
+ *
+ * @package AroundWire
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+get_header();
+
+$aw_pages = get_posts(
+	array(
+		'post_type'      => 'page',
+		'posts_per_page' => -1,
+		's'              => 'Near Me',
+		'orderby'        => 'title',
+		'order'          => 'ASC',
+		'post__not_in'   => array( get_the_ID() ), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
+	)
+);
 ?>
-
 <section class="blog__wrapper">
-    <div class="container-xxsmall">
-        <div class="content">
-            <h1 class="title-largest">Find a job near me</h1>
-            <ul>
-                <?php 
-                $current_page_id = get_the_ID();
+	<div class="container-xxsmall">
+		<div class="content">
+			<h1 class="title-largest">Find a job near me</h1>
+			<ul>
+				<?php foreach ( $aw_pages as $aw_page ) : ?>
+					<li><a class="link-medium-underline" href="<?php echo esc_url( get_permalink( $aw_page ) ); ?>"><?php echo esc_html( get_the_title( $aw_page ) ); ?></a></li>
+				<?php endforeach; ?>
 
-                $args = array(
-                    'post_type'      => 'page',
-                    'post_status'    => 'publish',
-                    's'              => 'Near Me',
-                    'post__not_in'   => array($current_page_id), 
-                );
-
-                $query = new WP_Query($args);
-
-                if ($query->have_posts()) :
-                    while ($query->have_posts()) : $query->the_post();
-                        echo '<li><a class="link-medium-underline" href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
-                    endwhile;
-                    wp_reset_postdata();
-                else :
-                    echo '<li>' . __('No pages found with "Near Me" in the title.', 'textdomain') . '</li>';
-                endif;
-                ?>
-            </ul>
-        </div>
-    </div>
+				<?php if ( ! $aw_pages ) : ?>
+					<li>No “Near Me” pages yet.</li>
+				<?php endif; ?>
+			</ul>
+		</div>
+	</div>
 </section>
-
-
 <?php
 get_footer();
-?>
