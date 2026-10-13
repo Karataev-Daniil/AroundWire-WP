@@ -1,104 +1,114 @@
 <?php
-/* Template Name: Near me Template */
-get_header(); 
+/**
+ * Template Name: Near me Template
+ *
+ * "Jobs near me" page: intro, related job pages (found by the key from the
+ * "Related jobs" box plus the custom-related-pages rows) and FAQs.
+ *
+ * @package AroundWire
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+get_header();
+
+$aw_key     = (string) get_post_meta( get_the_ID(), '_related_jobs_key', true );
+$aw_related = aw_related_job_pages( get_the_ID(), $aw_key );
+$aw_faqs    = array();
+
+if ( function_exists( 'have_rows' ) && have_rows( 'faqs' ) ) {
+	while ( have_rows( 'faqs' ) ) {
+		the_row();
+		$aw_faqs[] = array(
+			'title' => aw_string( aw_sub_field( 'title' ) ),
+			'text'  => aw_string( aw_sub_field( 'text' ) ),
+		);
+	}
+}
 ?>
 <div class="hero-block__wrapper">
-    <div class="container-xxsmall">
-        <div class="hero-block">
-            <h1 class="display-medium"><?php the_title(); ?></h1>
+	<div class="container-xxsmall">
+		<div class="hero-block">
+			<h1 class="display-medium"><?php the_title(); ?></h1>
+			<div class="content body-medium-medium">
+				<?php the_content(); ?>
+			</div>
+			<button type="button" class="primary-button-medium button-medium form-popup-button">Apply Now</button>
+		</div>
 
-            <div class="content body-medium-medium">
-                <?php the_content(); ?>
-            </div>
-            <button class="primary-button-medium button-medium form-popup-button">Apply Now</button>
-        </div>
+		<div class="divider"></div>
 
-        <div class="divider"></div>
+		<ul class="related-pages-list">
+			<?php foreach ( $aw_related as $aw_page ) : ?>
+				<?php
+				$aw_title       = (string) get_post_meta( $aw_page->ID, 'custom_related_job_title', true );
+				$aw_description = (string) get_post_meta( $aw_page->ID, 'description', true );
+				?>
+				<li>
+					<h2 class="title-large"><?php echo esc_html( '' !== $aw_title ? $aw_title : get_the_title( $aw_page ) ); ?></h2>
+					<?php if ( '' !== $aw_description ) : ?>
+						<p class="body-medium-regular"><?php echo esc_html( $aw_description ); ?></p>
+					<?php endif; ?>
+					<div class="button-group">
+						<button type="button" class="accent-button-small button-small form-popup-button">Quick Apply</button>
+						<a class="secondary-button-small button-small" href="<?php echo esc_url( get_permalink( $aw_page ) ); ?>">View Page</a>
+					</div>
+				</li>
+			<?php endforeach; ?>
 
-        <?php
-        $search_key = get_post_meta(get_the_ID(), '_related_jobs_key', true);
-
-        if ($search_key) {
-            $args = array(
-                'post_type'      => 'page',
-                'posts_per_page' => -1,
-                'post_status'    => 'publish',
-                's'              => $search_key ? $search_key . ' jobs' : '' ,
-                'post__not_in'   => array(get_the_ID()),
-            );
-
-            $query = new WP_Query($args);
-        }
-        ?>
-
-        <ul class="related-pages-list">
-            <?php if ($query->have_posts()) : ?>
-                <?php while ($query->have_posts()) : $query->the_post(); ?>
-                    <li>
-                        <?php 
-                        $custom_title = get_post_meta(get_the_ID(), 'custom_related_job_title', true);
-                        if ($custom_title) :
-                        ?>
-                            <h2 class="title-large"><?php echo esc_html($custom_title); ?></h2>
-                        <?php else : ?>
-                            <h2 class="title-large"><?php echo esc_html(get_the_title()); ?></h2>
-                        <?php endif; ?>
-                        
-                        <?php 
-                        $description = get_post_meta(get_the_ID(), 'description', true);
-                        if ($description) : ?>
-                            <p class="body-medium-regular"><?php echo esc_html($description); ?></p>
-                        <?php endif; ?>
-                        <div class="button-group">
-                            <button class="accent-button-small button-small form-popup-button">Quick Apply</button>
-                            <button class="secondary-button-small button-small" onclick="window.location.href='<?php echo esc_url(get_permalink()); ?>'">View Page</button>
-                        </div>
-                    </li>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
-
-            <?php if (have_rows('custom-related-pages')) : ?>
-                <?php while (have_rows('custom-related-pages')) : the_row(); ?>
-                    <li>
-                        <h2 class="title-large"><?php the_sub_field('title'); ?></h2>
-                        <p class="body-medium-regular"><?php the_sub_field('description'); ?></p>
-                        <button class="accent-button-small button-small form-popup-button">Quick Apply</button>
-                    </li>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
+			<?php while ( function_exists( 'have_rows' ) && have_rows( 'custom-related-pages' ) ) : ?>
+				<?php the_row(); ?>
+				<li>
+					<h2 class="title-large"><?php aw_the_sub_field( 'title' ); ?></h2>
+					<p class="body-medium-regular"><?php aw_the_sub_field( 'description' ); ?></p>
+					<button type="button" class="accent-button-small button-small form-popup-button">Quick Apply</button>
+				</li>
+			<?php endwhile; ?>
+		</ul>
+	</div>
 </div>
 
-<div class="faqs-block__wrapper">    
-    <div class="container-xxsmall">    
-        <div class="faqs-block" itemscope itemtype="https://schema.org/FAQPage">
-            <h3 class="display-small">FAQs about <?php echo esc_html($search_key); ?> Jobs</h2>
-            <div class="faqs-list">
-                <?php if (have_rows('faqs')) :
-                    while (have_rows('faqs')) : the_row(); ?>
-                        <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                            <h4 class="title-medium faq-title active" itemprop="name">
-                                <?php the_sub_field('title'); ?>
-                                <img class="toggle-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAADZJREFUSIljYBgFo2AUjAKCgBGXhKGx6XUGBgYNokz5z7Dp/LnT/tikmMhz1ygYBaNgFFAVAAA5ZQYE1i79SgAAAABJRU5ErkJggg==" alt="picture-minus">
-                            </h4>
-                            <div class="faq-content show" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                <p class="body-small-regular" style="max-height: none;" itemprop="text">
-                                    <?php the_sub_field('text'); ?>
-                                </p>
-                            </div>
-                            <div class="divider"></div>
-                        </div>
-                    <?php endwhile; ?>
-                <?php endif;?>
-            </div>
-        </div>
-    </div>
-</div>
+<?php if ( $aw_faqs ) : ?>
+	<div class="faqs-block__wrapper">
+		<div class="container-xxsmall">
+			<div class="faqs-block">
+				<h2 class="display-small">FAQs about <?php echo esc_html( $aw_key ); ?> Jobs</h2>
+				<div class="faqs-list" data-accordion="independent" data-accordion-open data-icon-closed="<?php echo esc_attr( AW_ICON_PLUS ); ?>" data-icon-open="<?php echo esc_attr( AW_ICON_MINUS ); ?>">
+					<?php foreach ( $aw_faqs as $aw_faq ) : ?>
+						<div class="faq">
+							<h3 class="title-medium faq-title" data-accordion-trigger>
+								<?php echo wp_kses_post( $aw_faq['title'] ); ?>
+								<img class="toggle-image" src="<?php echo esc_attr( AW_ICON_MINUS ); ?>" alt="" width="24" height="24">
+							</h3>
+							<div class="faq-content" data-accordion-panel>
+								<p class="body-small-regular"><?php echo wp_kses_post( $aw_faq['text'] ); ?></p>
+							</div>
+							<div class="divider"></div>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+		<?php
+		$aw_schema = array(
+			'@context'   => 'https://schema.org',
+			'@type'      => 'FAQPage',
+			'mainEntity' => array_map(
+				static fn( array $faq ): array => array(
+					'@type'          => 'Question',
+					'name'           => wp_strip_all_tags( $faq['title'] ),
+					'acceptedAnswer' => array(
+						'@type' => 'Answer',
+						'text'  => wp_strip_all_tags( $faq['text'] ),
+					),
+				),
+				$aw_faqs
+			),
+		);
 
-<?php 
-load_template_with_args('template-parts/components/ui-elements/form-popup');
-
-get_footer(); 
-?>
+		wp_print_inline_script_tag( (string) wp_json_encode( $aw_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ), array( 'type' => 'application/ld+json' ) );
+		?>
+	</div>
+<?php endif; ?>
+<?php
+get_footer();
