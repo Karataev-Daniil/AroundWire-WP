@@ -552,6 +552,11 @@ form:has(.link-button) {
   visibility: visible;
 }
 
+/* Slick kept slides content-box and the card widths in the section styles rely on it; Splide makes them border-box. */
+.splide__list > .splide__slide {
+  box-sizing: content-box;
+}
+
 /* Buttons that replaced spans and links keep the look of their classes. */
 :where(button.tag-filter, button.show-more, button.block-icon, button.search-button) {
   appearance: none;
@@ -561,6 +566,12 @@ form:has(.link-button) {
   font: inherit;
   color: inherit;
   cursor: pointer;
+}
+
+/* A link that replaced a button keeps the button look: dark text, no underline. */
+a.secondary-button-small {
+  color: var(--gray_-6);
+  text-decoration: none;
 }
 
 .blog-menu .sub-menu > li {

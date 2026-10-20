@@ -36,7 +36,7 @@ $aw_total   = (int) $wp_query->max_num_pages;
 							</a>
 						</div>
 						<div class="post-info">
-							<h2 class="title-medium">
+							<h2 class="post-card__title title-medium">
 								<a href="<?php the_permalink(); ?>" class="blog__block-link"><?php echo wp_kses( aw_highlight( get_the_title(), $aw_query ), array( 'span' => array( 'class' => true ) ) ); ?></a>
 							</h2>
 							<div class="post-excerpt body-medium-regular">

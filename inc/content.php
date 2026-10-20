@@ -65,17 +65,24 @@ function aw_add_typography_classes( string $content ): string {
 	return $processor->get_updated_html();
 }
 
-add_filter( 'the_content', 'aw_trim_headings', 30 );
+add_filter( 'the_content', 'aw_tidy_headings', 30 );
 
 /**
- * Removes stray whitespace inside h2–h5 on single posts, keeping inner markup.
+ * Tidies h2–h5 on single posts: trims stray whitespace and unwraps the styled spans that pasting from
+ * Google Docs leaves inside headings, so their inline font-weight does not override the heading style.
  */
-function aw_trim_headings( string $content ): string {
+function aw_tidy_headings( string $content ): string {
 	if ( ! is_single() ) {
 		return $content;
 	}
 
-	$content = (string) preg_replace( '/(<h[2-5]\b[^>]*>)\s+/i', '$1', $content );
+	return (string) preg_replace_callback(
+		'/(<h([2-5])\b[^>]*>)(.*?)(<\/h\2>)/is',
+		static function ( array $m ): string {
+			$inner = (string) preg_replace( '/<span\b[^>]*\sstyle=(["\'])[^"\']*\1[^>]*>(.*?)<\/span>/is', '$2', $m[3] );
 
-	return (string) preg_replace( '/\s+(<\/h[2-5]>)/i', '$1', $content );
+			return $m[1] . trim( $inner ) . $m[4];
+		},
+		$content
+	);
 }

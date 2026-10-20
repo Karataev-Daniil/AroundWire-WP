@@ -18,7 +18,7 @@
     padding: 48px 0;
     text-align: center;
 }
-.title-block div {
+.title-block .label-large {
     margin: 0 0 4px;
     color: var(--orange_-1);
 }
@@ -360,7 +360,7 @@
             }
         }
 
-        h3 {
+        .post-card__title {
             min-height: auto;
         }
 
@@ -494,7 +494,7 @@
     gap: 8px;
 }
 
-.blogs-form__info span {
+.blogs-form__info .display-small {
     color: var(--teal_5);
 }
 
@@ -665,7 +665,7 @@ form .input-block input {
             margin: 0;
             grid-column: span 2; 
     
-            h3 {
+            .post-card__title {
                 -webkit-line-clamp: auto;
             }
 
@@ -788,7 +788,7 @@ form .input-block input {
 
 @media screen and (max-width: 700px) { 
     .blog__hero-block .big-post {
-        h3 {
+        .post-card__title {
             font-size: 22px;
         }
     }
@@ -853,7 +853,7 @@ form .input-block input {
             }
 
             .post-info {
-                h3 {
+                .post-card__title {
                     font-size: 17px;
                 }
 

@@ -67,7 +67,8 @@ function aw_enqueue_assets(): void {
 		)
 	);
 
-	foreach ( array( 'reset', 'fonts', 'palette', 'typography', 'buttons', 'layout' ) as $base ) {
+	// Layout goes before buttons and typography, as in the original theme: their rules must win over its resets.
+	foreach ( array( 'reset', 'fonts', 'palette', 'layout', 'buttons', 'typography' ) as $base ) {
 		aw_enqueue_style( $base, "assets/css/base/{$base}.css" );
 	}
 

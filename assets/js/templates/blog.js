@@ -78,11 +78,11 @@
 	}
 
 	/**
-	 * Only the first two tags of a card are visible until "..." is clicked.
+	 * Only the first two tags of a card, plus the ones matching a search, are visible until "..." is clicked.
 	 */
 	AW.initTags = function ( root = document ) {
 		root.querySelectorAll( '[data-tags]:not([data-tags-ready])' ).forEach( ( container ) => {
-			const tags = Array.from( container.querySelectorAll( 'a' ) );
+			const tags = Array.from( container.querySelectorAll( 'a.tag-link' ) );
 			const more = container.querySelector( '.show-more' );
 
 			container.setAttribute( 'data-tags-ready', '' );

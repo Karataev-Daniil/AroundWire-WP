@@ -25,7 +25,7 @@
     object-position: center;
 }
 .blog__block-post span a,
-.blog__block-post h3 a {
+.blog__block-post .post-card__title a {
     min-height: 3em;
     margin: 0 0 5px;
     color: var(--gray_-6);

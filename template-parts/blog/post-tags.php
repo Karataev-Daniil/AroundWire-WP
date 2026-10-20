@@ -1,7 +1,7 @@
 <?php
 /**
  * Tag links of the current post. On search results, tags matching the query are highlighted.
- * Only the first two tags are visible until "..." is clicked (assets/js/templates/blog.js).
+ * Only the first two tags, plus the ones matching a search, are visible until "..." is clicked (assets/js/templates/blog.js).
  *
  * @package AroundWire
  */

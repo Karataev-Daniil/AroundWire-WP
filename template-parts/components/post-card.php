@@ -43,7 +43,7 @@ $aw_title     = get_the_title();
 	</div>
 
 	<div class="post-info">
-		<<?php echo tag_escape( $aw_title_tag ); ?> class="<?php echo esc_attr( $aw_args['title_style'] ); ?>">
+		<<?php echo tag_escape( $aw_title_tag ); ?> class="post-card__title <?php echo esc_attr( $aw_args['title_style'] ); ?>">
 			<a href="<?php the_permalink(); ?>" class="blog__block-link"><?php echo esc_html( $aw_title ); ?></a>
 		</<?php echo tag_escape( $aw_title_tag ); ?>>
 
